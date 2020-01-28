@@ -8,8 +8,8 @@ function App() {
   return (
     <div className="App">
       <nav>
-        <Link to='/'>Home</Link>
-        <Link to='/counter'>Counter</Link> {''}
+        <Link to='/'>Home</Link>{' '}
+        <Link to='/counter'>Counter</Link> {' '}
         <Link to='/films'>Films</Link>
       </nav>
       <Switch>
