@@ -6,7 +6,6 @@ import { addFilms } from '../Store/actions/filmActions'
 
 
 const Films = (props) => {
-    const [data, setData] = useState([])
 
     useEffect(() => {
         const getAllFilms = async () => {
@@ -33,7 +32,7 @@ const Films = (props) => {
             <h1>Films</h1>
             <ul>
                 {
-                    data.map(film => {
+                    props.filmState.films.map(film => {
                         return (
                             <li key={film.id}>
                                 <Link to={`/films/${film.id}`}>{film.title}</Link>
