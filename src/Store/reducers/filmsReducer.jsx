@@ -7,7 +7,7 @@ const initialState = {
 
 export default (state = initialState, action) => {
 
-    stateCopy = { ...state }
+    let stateCopy = { ...state }
 
 
     switch (action.type) {
