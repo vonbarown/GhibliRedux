@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import { Switch, Link, Route } from 'react-router-dom';
 import { Home } from './Components/Home'
-import { Films } from './Components/Films'
+import Films from './Components/Films'
 import CounterContainer from './Containers/counterContainer'
 function App() {
   return (

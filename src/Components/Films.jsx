@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
 
 
-export const Films = () => {
+const Films = (props) => {
     const [data, setData] = useState([])
 
     useEffect(() => {
@@ -23,8 +24,10 @@ export const Films = () => {
         getAllFilms()
     }, [])
 
-    console.log(data);
+    console.log(props);
+
     return (
+
         <div>
             <h1>Films</h1>
             <ul>
@@ -41,3 +44,15 @@ export const Films = () => {
         </div>
     )
 }
+
+const mapStateToProps = (state) => {
+    return state
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Films)
