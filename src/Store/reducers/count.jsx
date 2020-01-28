@@ -1,5 +1,5 @@
 
-import { INCREMENT, DECREMENT } from "../actions/actionTypes";
+import { INCREMENT, DECREMENT } from '../actions/actionsTypes';
 
 export default (state = 0, action) => {
     switch (action.type) {

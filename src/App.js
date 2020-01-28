@@ -1,9 +1,9 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { Switch, Link, Route } from 'react-router-dom';
 import { Home } from './Components/Home'
 import { Films } from './Components/Films'
+import Counter from './Components/Counter'
 function App() {
   return (
     <div className="App">
@@ -13,11 +13,9 @@ function App() {
         <Link to='/films'>Films</Link>
       </nav>
       <Switch>
-        {// <Route to='/counter' component={counter} />
-        }
-        <Route to='/films' component={Films} />
-
-        <Route to='/' component={Home} />
+        <Route path='/counter' component={Counter} />
+        <Route path='/films' component={Films} />
+        <Route path='/' component={Home} />
       </Switch>
     </div>
   );
