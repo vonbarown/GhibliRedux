@@ -1,4 +1,4 @@
-import { INCREMENT, DECREMENT } from "./actionTypes";
+import { INCREMENT, DECREMENT } from "./actionsTypes";
 
 export const incrementCount = () => {
     return { type: INCREMENT };
