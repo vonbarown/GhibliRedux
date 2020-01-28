@@ -9,13 +9,12 @@ export default (state = initialState, action) => {
 
     let stateCopy = { ...state }
 
-
     switch (action.type) {
         case RECEIVE_FILMS:
-            return stateCopy = {
-                films: action.data
-            }
+            stateCopy.films = action.payload
+            break
         default:
-            return stateCopy;
+            break
     }
+    return stateCopy;
 };
