@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 
 export const Films = () => {
@@ -26,7 +27,17 @@ export const Films = () => {
     return (
         <div>
             <h1>Films</h1>
-            <p>Show List of Films</p>
+            <ul>
+                {
+                    data.map(film => {
+                        return (
+                            <li key={film.id}>
+                                <Link to={`/films/${film.id}`}>{film.title}</Link>
+                            </li>
+                        )
+                    })
+                }
+            </ul>
         </div>
     )
 }
