@@ -15,18 +15,23 @@ class CounterContainer extends React.Component {
     };
 
     render() {
-        const { count } = this.props;
+        const { counterState } = this.props;
         console.log(this.props);
 
         return (
             <Counter
-                value={count}
+                value={counterState}
                 onIncrement={this.increment}
                 onDecrement={this.decrement}
             />
         );
     }
 }
+const mapStateToProps = (state) => {
+    return {
+        counterState: state.counterState
+    }
+}
 
 // The component is connected to the redux store
-export default connect(state => state)(CounterContainer);
+export default connect(mapStateToProps)(CounterContainer);
