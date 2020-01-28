@@ -1,8 +1,9 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 
 
 export const Films = () => {
+    const [data, setData] = useState([])
 
     useEffect(() => {
         const getAllFilms = async () => {
@@ -11,8 +12,7 @@ export const Films = () => {
             try {
                 const { data } = await axios.get(apiUrl)
 
-                console.log(data);
-
+                setData(data)
             } catch (error) {
                 window.alert('You took a wrong turn')
                 console.log(error);
@@ -20,8 +20,9 @@ export const Films = () => {
         }
 
         getAllFilms()
-    })
+    }, [])
 
+    console.log(data);
     return (
         <div>
             <h1>Films</h1>
