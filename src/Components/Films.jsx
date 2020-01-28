@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
+import { addFilms } from '../Store/actions/filmActions'
 
 
 const Films = (props) => {
@@ -14,7 +15,7 @@ const Films = (props) => {
             try {
                 const { data } = await axios.get(apiUrl)
 
-                setData(data)
+                props.addFilms(data)
             } catch (error) {
                 window.alert('You took a wrong turn')
                 console.log(error);
@@ -51,7 +52,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-
+        addFilms: data => dispatch(addFilms(data)),
     }
 }
 
